@@ -16,11 +16,17 @@ else
 	echo "Redirecting HTTP requests to ${REDIRECT_TARGET}..."
 fi
 
+if [ -z "$RETAIN" ]; then
+	TRAILING=
+else
+	TRAILING="\$1"
+fi
+
 cat <<EOF > /etc/nginx/conf.d/default.conf
 server {
 	listen 80;
 
-	rewrite ^/(.*)\$ $REDIRECT_TARGET\$1 permanent;
+	rewrite ^/(.*)\$ $REDIRECT_TARGET$TRAILING permanent;
 }
 EOF
 
