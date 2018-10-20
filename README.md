@@ -1,3 +1,5 @@
+> I recommend a more elegant and efficient way to redirect URLs if you use [Traefik](https://traefik.io) as your reverse proxy: https://blog.birkhoff.me/redirect-domains-to-specific-urls-with-traefik/
+
 This Docker container listens on port 80 and redirects all web traffic permanently to the given target domain/URL.
 
 ## Features ##
